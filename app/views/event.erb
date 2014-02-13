@@ -1,0 +1,17 @@
+<div class="container">
+  <form method="post" action="/update/<%="#{@event.id}"%>">
+    <h1><%= @event.name %></h1>
+    <input type="text" name="name" value="<%= @event.name %>"><br>
+    <input type="text" name="location" value="<%= @event.location %>"><br>
+    FROM <%= @event.starts_at%> TO <%= @event.ends_at%><br>
+    <input type="date" name="starts_at" value="<%= @event.starts_at%>"><br>
+    <input type="date" name="ends_at" value="<%= @event.ends_at%>"><br>
+    <input type="submit" value="update">
+  </form>
+
+  <form method="post" action="/delete/<%="#{@event.id}"%>">
+    <input type="submit" value="delete">
+  </form>
+
+  <p><a href="/show_events/<%="#{session[:user_id]}"%>">My Events Home</a></p>
+</div>

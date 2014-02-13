@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @user.first_name%>'s Events</h1>
+  <h2>Created</h2>
+  <ul>
+    <% @user.created_events.each do |event| %>
+      <li><a href="/event/<%= event.id %>"><%= event.name %></a></li>
+      <li><%= event.location %></li>
+      <li>FROM <%= event.starts_at%> TO <%= event.ends_at%></li><br>
+    <% end %>
+  </ul>
+
+  <p><a id="create" href="/create">Create An Event</a></p>
+</div>
